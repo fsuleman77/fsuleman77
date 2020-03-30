@@ -1,12 +1,4 @@
 # Starter pipeline
-- task: Prisma Cloud IaC Scan@1
-  inputs:
-    Path: 'fsuleman77/fsuleman77 / azure-pipelines.yml'
-    prismaCloudService: 'PrismaCloud IaC Scanner (Fahd Devops)'
-    High: '0'
-    Medium: '0'
-    Low: '0'
-    Operator: 'or'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -18,6 +10,14 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: Prisma Cloud IaC Scan@1
+  inputs:
+    Path: 'fsuleman77/fsuleman77 / azure-pipelines.yml'
+    prismaCloudService: 'PrismaCloud IaC Scanner (Fahd Devops)'
+    High: '0'
+    Medium: '0'
+    Low: '0'
+    Operator: 'or'
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
